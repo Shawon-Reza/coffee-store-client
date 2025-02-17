@@ -1,12 +1,15 @@
 import AddCoffee from "../Components/AddCoffee";
+import Coffeedetails from "../Components/Coffeedetails";
 
 const Layout = () => {
+
+
     return (
         <div>
-            <h1>Layout</h1>
 
             <section>
-                <AddCoffee></AddCoffee>
+                <Coffeedetails></Coffeedetails>
+                {/* <AddCoffee></AddCoffee> */}
             </section>
         </div>
     );
