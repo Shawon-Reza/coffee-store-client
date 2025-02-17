@@ -18,7 +18,22 @@ const AddCoffee = () => {
             photo: form.photo.value,
         };
 
-console.log(newCoffee);
+        console.log(newCoffee);
+        console.log(newCoffee.length);
+
+
+        fetch("http://localhost:5000/addcoffee",
+            {
+                method: "POST",
+                headers: {
+                    "content-Type": "application/json"
+                },
+                body: JSON.stringify(newCoffee)
+            }
+        )
+        .then(res=>res.json())
+        .then(data=>console.log(data))
+
         // Reset the form
         form.reset();
     };
@@ -44,7 +59,7 @@ console.log(newCoffee);
                         {/* Left Column */}
                         <div className="flex flex-col gap-4 w-full">
                             <label className="label-text font-semibold">Name</label>
-                            <input type="text" name="name" placeholder="Name"
+                            <input type="text" name="name" placeholder="Name" required
                                 className="input input-bordered input-primary w-full max-w-lg" />
 
                             <label className="label-text font-semibold">Supplier</label>
@@ -52,7 +67,7 @@ console.log(newCoffee);
                                 className="input input-bordered input-primary w-full max-w-lg" />
 
                             <label className="label-text font-semibold">Category</label>
-                            <input type="text" name="category" placeholder="Category Name"
+                            <input type="text" name="category" placeholder="Category Name" required
                                 className="input input-bordered input-primary w-full max-w-lg" />
                         </div>
 
@@ -67,7 +82,7 @@ console.log(newCoffee);
                                 className="input input-bordered input-primary w-full max-w-lg" />
 
                             <label className="label-text font-semibold">Details</label>
-                            <input type="text" name="details" placeholder="Coffee Details"
+                            <input type="text" name="details" placeholder="Coffee Details" required
                                 className="input input-bordered input-primary w-full max-w-lg" />
                         </div>
                     </div>
