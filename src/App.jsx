@@ -3,7 +3,7 @@
 function App() {
 
 
-  return (
+  return ( 
     <>
 
       <h1 className='text-3xl font-bold p-10 text-center underline'> Tailwind v4.o</h1>

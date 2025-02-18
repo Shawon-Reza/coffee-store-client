@@ -26,12 +26,18 @@ const Coffeedetails = () => {
                     onClick={() =>navigate("/addcoffee")}
                 >Add Coffee</button>
             </div>
+
+
+            {/* Shows all coffee on display */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 p-5">
                 {
                     coffeeList.map(coffee =>
                         <SingleCoffeDetails
                             key={coffee._id}
                             coffee={coffee}
+                            coffeeList={coffeeList}
+                            setCoffeeList={setCoffeeList}
+
                         >
                         </SingleCoffeDetails>)
                 }
